@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<!-- Шаблоны, описывающие каркас ответа на ajax запрос -->
+	<!-- JSP разметка контента страниц храняться в папке ajax -->
+	
+	<!-- Список мем карты -->
+	<definition name="memas-on-card-ajax" template="/view/ajax/memas-on-card.jsp"/>
+	
+	<!-- Карта -->
+	<definition name="card-ajax" template="/view/ajax/card.jsp"/>
+	
+	<!-- Ответ на успешную операцию -->
+	<definition name="sucess-ajax" template="/view/ajax/success.jsp"/>
+	
+	<!-- Ответ на запрос добавления новой мемы -->
+	<definition name="add-new-mema-ajax" template="/view/ajax/add-new-mema.jsp"/>
+		
+</tiles-definitions>

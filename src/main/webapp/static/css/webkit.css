@@ -1,0 +1,32 @@
+﻿header {
+    -webkit-box-shadow: 0 0 15px 4px #999;
+}
+
+footer {
+    -webkit-box-shadow: 0 0 15px 4px #999;
+}
+
+.cards li.selected a{
+    -webkit-border-radius: 10px;
+}
+
+#wrapper {
+    background-image: -webkit-gradient(linear, left bottom, left top, from( #eee), to(#abcde1));
+}
+
+#content .space {
+}
+
+#content .card > .title {
+	-webkit-border-radius: 18px 18px 0 0 / 18px 18px 0 0;
+}
+
+#content .card .tools ul li.selected {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f5f7), to(#e5eaed));
+}
+
+#content .card {
+	background-image: -webkit-gradient(linear, left bottom, left top, from(#dae2e7), to(#e5eaed));
+	-webkit-border-radius: 18px;
+	-webkit-box-shadow: 0 0 15px 3px #999;
+}

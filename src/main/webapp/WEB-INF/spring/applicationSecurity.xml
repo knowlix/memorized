@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:security="http://www.springframework.org/schema/security"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.4.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<security:global-method-security pre-post-annotations="enabled"/>
+
+	<!-- HTTP security configuration -->
+	<security:http auto-config="true" access-decision-manager-ref="unanimousBased" use-expressions="true">
+        <security:intercept-url pattern="/static/**" access="permitAll"/>
+		<security:intercept-url pattern="/login" access="permitAll"/>
+		<security:intercept-url pattern="/registration" access="permitAll"/>
+		<security:intercept-url pattern="/*" access="permitAll"/>
+		<security:intercept-url pattern="/*/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/" access="permitAll"/>
+		
+		<security:form-login login-page="/login" always-use-default-target="true" default-target-url="/spaces/"/>
+		
+		<security:logout logout-url="/logout" invalidate-session="true"/>
+		
+		<security:remember-me services-ref="rememberMeServices" />
+	</security:http>
+	
+	<bean id="userManager" class="org.springframework.security.provisioning.JdbcUserDetailsManager" autowire="byType">
+		<property name="authenticationManager" ref="authenticationManager"/>
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+<!-- 	<bean id="userService" class="ru.memorized.security.services.user.UserServiceImpl"/> -->
+	<bean id="userService" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="enableGroups" value="true"/>
+        <property name="enableAuthorities" value="false"/>
+        
+    </bean>
+	
+	<!-- Remember me service persistence -->
+    <bean id="rememberMeTokenRepository" class="org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="remembermeAuthenticationProvider" class="org.springframework.security.authentication.RememberMeAuthenticationProvider">
+        <property name="key" value="meM0riZed"/>
+    </bean>
+    
+	<bean id="rememberMeServices" class="org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices">
+		<property name="key" value="meM0riZed"/>
+		<property name="userDetailsService" ref="userService"/>
+        <property name="tokenRepository" ref="rememberMeTokenRepository"/>
+        <property name="useSecureCookie" value="true"/>
+		<property name="parameter" value="remember_me"/>
+		<property name="cookieName" value="_rm"/>
+	</bean>
+	
+	<!-- Access Decision Manager(ADM) -->
+	<bean id="unanimousBased" class="org.springframework.security.access.vote.UnanimousBased">
+		<property name="decisionVoters" ref="webExpressionVoter"/>
+	</bean>
+	
+	<!-- ADM voters -->
+	<bean id="webExpressionVoter" class="org.springframework.security.web.access.expression.WebExpressionVoter"/>
+	<bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter"/>
+	<bean id="authenticatedVoter" class="org.springframework.security.access.vote.AuthenticatedVoter"/>
+	
+    <bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" autowire="byName"/>
+    <bean id="saltSource" class="org.springframework.security.authentication.dao.ReflectionSaltSource" p:userPropertyToUse="username" autowire="byName"/>
+    
+	<!-- Authentication Manager -->
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider user-service-ref="userService">
+            <security:password-encoder ref="passwordEncoder">
+                <security:salt-source ref="saltSource"/>
+            </security:password-encoder>
+        </security:authentication-provider>
+	</security:authentication-manager>
+
+</beans>

@@ -1,0 +1,466 @@
+﻿html, body {
+    height: 100%;
+}
+
+ul.horizontal li {
+    float: left;
+}
+
+a.link {
+    text-decoration: none;
+    border-bottom: 1px dashed #999;
+}
+
+h2 {
+    font: 42px Tahoma, Arial, sans-serif;
+    color: #0988ad; 
+    width: 500px; 
+    margin: 30px 0 0 40px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.hidden {
+    display: none;
+}
+
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -30px;
+}
+
+#push {
+    height: 30px;
+}
+
+header {
+	height: 58px;
+    background-color: #6aa5c9;
+}
+
+footer {
+    height: 30px;
+    background-color: #6aa5c9;
+}
+
+header a.logo {
+	display: block;
+	width:210px;
+	float:left;
+}
+
+header .main_menu li{
+    line-height: 58px;
+    margin-right: 20px;
+}
+
+header .main_menu li.selected a{
+    -webkit-border-radius: 10px;
+    background-color: #E01B4C;
+    padding: 3px 5px 5px 8px;
+}
+
+header .main_menu li a, header .user_bar a{
+    font: 14px Arial, sans-serif;
+    color: #fff;
+    text-decoration: none;
+}
+
+header .user_bar a {
+    line-height: 58px;
+    padding-right: 10px;
+}
+
+header .user_bar a.logout {
+	display:block;
+	float: right;
+	margin: 12px 10px 0 0;
+}
+
+header .user_bar p {
+	margin: 0 10px 0 0;
+	float: left;
+}
+
+header .user_bar p span {
+	display: block;
+	font: 11px Tahoma, sans-serif;
+	margin-top:10px;
+}
+
+header .user_bar p a {
+	line-height: 14px;
+}
+
+#spacecards {
+    margin-left: 450px;
+}
+
+#spacecards li {
+    padding-bottom: 4px;
+}
+
+#spacecards li span {
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+#spacecards li.active span {
+    background-color: #ddeaf3;
+}
+
+#content {
+    position: relative;
+}
+
+#content .space {
+	background: linear-gradient(bottom, #abcde1, #6aa5c9);
+	padding: 50px 40px;
+}
+
+#content .space .card {
+    width: 388px;
+    height: 505px;
+    position: absolute;
+}
+
+/* цветовые схемы карт */
+#content .space .card.dictionary div.title {
+	background-color: #8ec9e5;
+}
+
+#content .space .card.guide div.title {
+	background-color: #e01b4a;
+}
+
+#content .space .card > .title {
+    height: 73px;
+    border-bottom: 1px solid #676767;
+    border-radius: 18px 18px 0 0/ 18px 18px 0 0;
+    padding: 0 20px;
+}
+
+#content .space .card > .title h3 {
+    padding-top: 20px;
+    color: #feffff;
+}
+
+#content .space .card > .title blockquote {
+    color: #feffff;
+}
+
+#content .space .card .tools {
+    height: 24px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+#content .space .card .tools ul li {
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+    padding: 0 3px;
+    text-align: center;
+}
+
+#content .space .card .tools ul li.selected {
+    background: linear-gradient(top,#f3f5f7,#e5eaed);
+}
+
+#content .space .card .memas {
+	list-style-position: inside;
+	list-style-type: decimal;
+    margin: 18px;
+    overflow:auto;
+    height:370px;
+}
+
+#content .space .card .memas li {
+	position: relative;
+	margin-bottom: 3px;
+	color: #777;
+	font-size: 13px;
+}
+
+#content .space .card .memas .title {
+	display: inline;
+    color: #777;
+    cursor: pointer;
+    font: bold 13px Arial,sans-serif;
+}
+
+#content .space .card .memas .title:hover {
+    color: #6aa5c9;
+}
+
+#content .space .card .memas .title :first-child {
+    margin-top: 0;
+}
+
+#content .space .card .memas .description {
+    display: none;
+    color: #444;
+    font: 12px Arial, sans-serif;
+    margin: 2px 0 6px 18px;
+}
+
+/*=form_add_mema*/
+.form_add_mema input[name=mema_title] {
+    width: 86%;
+    border: 1px solid #ccc;
+    height: 30px; 
+    line-height: 30px;
+    font-size: 16px;
+    padding: 0pt 40px 0 10px; 
+    color: #999
+}
+
+.form_add_mema input[type=submit] {
+    float:right;
+    position:relative;
+    top: -26px;
+    left: -3px;
+    background: transparent url("../img/enter-button.gif") left top no-repeat;
+    border: none;
+    width: 21px;
+    height: 21px;
+}
+
+.form_add_mema input[type=submit]:hover {
+    outline: none;
+}
+
+.form_add_mema{
+    display: none;
+    margin: 10px 15px;
+}
+
+.form_add_mema input{
+    width: 277px;
+    border: 1px solid #cecece;
+    height: 20px;
+    margin-bottom: 10px;
+    padding-left: 78px;
+}
+
+.form_add_mema textarea {
+    width: 335px;
+    height: 310px;
+    border: 1px solid #cecece;
+    padding: 25px 10px 10px;
+}
+
+.form_add_mema div.tb {
+    position: relative;
+}
+
+.form_add_mema div.tb span {
+    width: 345px;
+    position: absolute;
+    top: 2px;
+    left: 1px;
+    display: block;
+    height: 20px;
+    background-color: #ececec;
+    color: #999;
+    font: 12px/18px Tahoma, serif;
+    padding-left: 10px;
+}
+
+.form_add_mema div.tb.with-title-label span {
+    width: 66px;
+    top: 1px;
+    height: 22px;
+    line-height: 20px;
+}
+
+.cards{
+    position: absolute;
+    top: 0; 
+    right: 20px;
+    width: 200px;
+    background-color: #aaa;
+    opacity: 0.6;
+    padding: 20px 0;
+}
+
+.cards li{
+    width: 80%;
+    height: 20px;
+    margin: 10px auto;
+}
+
+.cards li a{
+    color: #fff;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.cards li.selected a{
+    text-decoration: none;
+    background-color: #000;
+}
+
+form.userForm {
+    width: 300px;
+    margin: 10% auto; 
+    position: relative;
+}
+
+form.userForm label[for="j_username"], form.userForm label[for="j_password"], form.userForm label[for="username"], form.userForm label[for="password"]{
+    position: absolute; 
+    padding: 0 10px; 
+    background-color: #7A7A7A; 
+    color: #fff; 
+    font: 14px/24px Tahoma, Arial, sans-serif;
+    width: 45px;
+}
+
+form.userForm label[for="j_username"] {
+    top: 0; 
+    left: 0; 
+}
+
+form.userForm label[for="j_password"] {
+     
+}
+
+form.userForm label[for="remember_me"] {
+    font: 12px Tahoma, Arial, sans-serif;
+    color: #666;
+    position: relative;
+    top: -2px;
+}
+
+form.userForm input[type="text"], form.userForm input[type="password"] {
+    width: 228px; 
+    border: 1px solid #666; 
+    margin-bottom: 8px;
+    height: 20px; 
+    background-color: white !important;
+    padding-left: 70px;
+}
+
+form.userForm input[type="submit"] {
+    float: right; 
+    width: auto; 
+    background: #6aa5c9; 
+    border: none; 
+    color: #fff; 
+    height: 20px; 
+    cursor: pointer;
+}
+
+.cardList_block {
+    margin: 25px 0 0 40px;
+    width: 500px;
+}
+
+.cardList {
+    margin: 20px 0;
+}
+
+.cardList li {
+    font: 14px/14px Arial, Tahome, sans-serif;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.cardList li:hover {
+    color: #0988AD;
+}
+
+#add_card_block {
+    margin: 25px 40px 0 0;
+}
+
+#add_card_block h3 {
+    margin-bottom: 5px;
+}
+
+#form_card_add {
+    width: 364px;
+    position: relative;
+}
+
+#form_card_add label[for="title"], #form_card_add label[for="description"], #form_card_add label[for="title"], #form_card_add label[for="description"]{
+    position: absolute; 
+    padding: 0 10px; 
+    background-color: #7A7A7A; 
+    color: #fff; 
+    font: 14px/24px Tahoma, Arial, sans-serif;
+    width: 110px;
+}
+
+#form_card_add label[for="title"] {
+    top: 0; 
+    left: 0; 
+}
+
+#form_card_add label[for="description"] {
+     
+}
+
+#form_card_add input[type="text"] {
+    width: 228px; 
+    border: 1px solid #666; 
+    margin-bottom: 8px;
+    height: 20px; 
+    background-color: white !important;
+    padding-left: 132px;
+}
+
+#form_card_add input[type="submit"] {
+    float: right; 
+    width: auto; 
+    background: #6aa5c9; 
+    border: none; 
+    color: #fff; 
+    height: 20px; 
+    cursor: pointer;
+}
+
+.cardLinks {
+    padding-left: 15px;
+}
+
+ul#last-news{
+    float: right;
+    margin-top: -150px;
+    width: 300px;
+    margin-right: 80px;   
+}
+
+ul#last-news h4{
+    font-size: 14px;
+    font-weight: normal;
+    color: #0988AD;
+    margin-bottom: 4px;
+}
+
+ul#last-news h4 span.date {
+    color: #666;
+}
+
+ul#last-news p{
+    margin-top: 0px;
+    font-size: 12px;
+    color: #333;   
+    line-height: 16px;
+}
+
+#projectDescription{
+    width: 600px;
+    margin-left: 40px;
+    margin-top: 40px;   
+}

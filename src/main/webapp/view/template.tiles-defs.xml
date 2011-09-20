@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<!-- Шаблоны, описывающие основной каркас страницы -->
+	<!-- JSP разметка каркасов страниц храняться в папке templates -->
+	<!-- JSP разметка общих логических частей страницы хранится в папке common -->
+	<definition name="commonLayout" template="/view/templates/main.jsp">
+		<put-attribute name="userbar" value="/view/common/userbar.jsp"/>
+		<put-attribute name="content" value=""/>
+		<put-attribute name="footer" value="/view/common/footer.jsp"/>
+		<put-list-attribute name="styles">
+			<add-attribute value="reset.css"/>
+			<add-attribute value="general.css"/>
+			<add-attribute value="firefox.css"/>
+			<add-attribute value="webkit.css"/>
+			<add-attribute value="jquery-ui.css"/>
+		</put-list-attribute>
+		<put-list-attribute name="scripts">
+			<add-attribute value="cufon/cufon-yui.js"/>
+			<add-attribute value="cufon/Arial_400.font.js"/>
+			<add-attribute value="cufon/Tahoma_400.font.js"/>
+			
+			<add-attribute value="jquery/jquery-1.5.1.min.js"/>
+			<add-attribute value="jquery/jquery-ui-1.8.13.custom.min.js"/>
+			<add-attribute value="jquery/jquery.class.js"/>
+   
+            <add-attribute value="ejs/ejs.js"/>
+            <add-attribute value="ejs/view.js"/>
+			
+            <add-attribute value="src/app.js"/>
+            <add-attribute value="src/utils/translator.js"/>
+            <add-attribute value="src/models/space/Space.js"/>
+            <add-attribute value="src/models/card/Card.js"/>
+            <add-attribute value="src/models/card/EasyCard.js"/>
+            <add-attribute value="src/models/card/widgets/CardWidget.js"/>
+            <add-attribute value="src/models/card/widgets/DictionaryWidget.js"/>
+            <add-attribute value="src/models/card/widgets/GuideWidget.js"/>
+            <add-attribute value="src/models/card/CardFactory.js"/>
+            <add-attribute value="src/models/mema/Mema.js"/>
+			<add-attribute value="memorized.onload.js"/>
+		</put-list-attribute>
+	</definition>
+
+</tiles-definitions>

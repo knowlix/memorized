@@ -1,0 +1,34 @@
+﻿html, body, header, footer, h3, div, span, dl, dt, dd, ul, li, ol, li, img, a, blockquote {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+h3 {
+	font: 21px/21px Arial, Tahoma, sans-serif;
+}
+
+blockquote, ul li {
+	font: 10px/10px Arial, Tahoma, sans-serif;
+}
+
+ul {
+	list-style-type: none;
+}
+
+dl dt {
+	list-style-type: circle;
+	font: 14px/14px Tahoma, Arial, sans-serif;
+}
+
+dl dd {
+	font: 12px/12px Tahoma, Arial, sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<!-- Шаблоны, описывающие каркас конкретной страницы -->
+	<!-- JSP разметка контента страниц храняться в папке pages -->
+	
+	<!-- Главная страницы -->
+	<definition name="indexPage" extends="commonLayout">
+		<put-attribute name="title" value="Пространство карт"/>
+		<put-attribute name="content" value="/view/pages/index.jsp"/>
+	</definition>
+	
+	<!-- Страница авторизации -->
+	<definition name="loginPage" extends="commonLayout">
+		<put-attribute name="title" value="Log in please"/>
+		<put-attribute name="content" value="/view/pages/users/loginForm.jsp"/>
+	</definition>
+	
+	<!-- Форма регистрация пользователя -->
+	<definition name="registerFormPage" extends="commonLayout">
+		<put-attribute name="title" value="Registration"/>
+		<put-attribute name="content" value="/view/pages/users/registerForm.jsp"/>
+	</definition>
+    
+    <!-- Главная страница управления картами -->
+    <definition name="cardsIndexPage" extends="commonLayout">
+        <put-attribute name="title" value="Управление картами"/>
+        <put-attribute name="content" value="/view/pages/cards/index.jsp"/>
+        <put-attribute name="menuItem" value="cards"/>
+    </definition>
+	
+	<!-- Форма создания новой карты -->
+	<definition name="cardFormPage" extends="commonLayout">
+		<put-attribute name="title" value="Card Form page"/>
+		<put-attribute name="content" value="/view/pages/cards/form.jsp"/>
+	</definition>
+    
+    <!-- Страница отображения пространства -->
+    <definition name="spaceShowPage" extends="commonLayout">
+        <put-attribute name="title" value="Пространство"/>
+        <put-attribute name="content" value="/view/pages/spaces/show.jsp"/>
+        <put-attribute name="menuItem" value="spaces"/>
+    </definition>
+	
+	<!-- Ошибка 404 -->
+	<definition name="errorPage" extends="commonLayout">
+		<put-attribute name="title" value="Error 404"/>
+		<put-attribute name="content" value="/view/pages/error.jsp"/>
+	</definition>
+
+</tiles-definitions>

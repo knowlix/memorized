@@ -1,0 +1,33 @@
+﻿header {
+    -moz-box-shadow: 0 0 15px 4px #999;
+}
+
+footer {
+    -moz-box-shadow: 0 0 15px 4px #999;
+}
+
+.cards li.selected a{
+    -moz-border-radius: 10px;
+}
+
+#wrapper {
+    background-image: -moz-linear-gradient(bottom, #eee, #abcde1);
+}
+
+#content .space {
+	
+}
+
+#content .card > .title {
+	-moz-border-radius: 18px 18px 0 0 / 18px 18px 0 0;
+}
+
+#content .card .tools ul li.selected {
+	background-image: -moz-linear-gradient(top, #f3f5f7, #e5eaed);
+}
+
+#content .card {
+	background-image: -moz-linear-gradient(bottom, #dae2e7, #e5eaed 30%);
+	-moz-border-radius: 18px;
+	-moz-box-shadow: 0 0 15px 4px #889;
+}
